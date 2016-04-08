@@ -74,11 +74,19 @@
   - nginx_ssl_key_file: /home/pvh/Documents/SANBI/Certs/sanbi.key
 
   roles:
+  # SANBI basic-server role: https://github.com/pvanheus/sanbi-basic-server
   - { role: basic-server, tags: basic-server }
+  # Galaxy Project https://github.com/galaxyproject/ansible-galaxy-os
   - { role: ansible-galaxy-os, tags: ansible-galaxy-os }
+  # Nate (natefoo) https://github.com/natefoo/ansible-postgresql-objects
   - { role: ansible-postgresql-objects, become: yes, become_user: postgres, tags: galaxy }
+  # Galaxy Project https://github.com/galaxyproject/ansible-galaxy
   - { role: ansible-galaxy, tags: galaxy, become: yes, become_user: "{{ galaxy_user_name | default('galaxy') }}" }
+  # Galaxy Project https://github.com/galaxyproject/ansible-galaxy-extras
   - { role: ansible-galaxy-extras, tags: galaxy }
+  # SANBI role https://github.com/pvanheus/ansible-galaxy-pam-auth-sanbi
   - { role: ansible-galaxy-pam-auth-sanbi, tags: galaxy }
+  # SANBI role https://github.com/pvanheus/ansible-galaxy-envmodules-sanbi-
   - { role: ansible-galaxy-envmodules-sanbi, tags: galaxy } 
+  # SANBI role https://github.com/pvanheus/ansible-galaxy-sge-sanbi
   - { role: ansible-galaxy-sge-sanbi, tags: galaxy }
