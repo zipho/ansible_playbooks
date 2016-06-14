@@ -35,9 +35,9 @@
   - galaxy_config:
       "app:main":
         database_connection: "postgresql:///galaxy?host=/var/run/postgresql"
-        admin_users: pvh@sanbi.ac.za,zipho@sanbi.ac.za
-        dynamic_proxy_external_proxy: True
-        dynamic_proxy_prefix: gie_proxy
+        admin_users: pvh@sanbi.ac.za,zipho@sanbi.ac.za,thoba@sanbi.ac.za
+        #dynamic_proxy_external_proxy: True
+        #dynamic_proxy_prefix: gie_proxy
         library_import_dir: /cip0/software/galaxy/galaxydev/admin_import
         tool_dependency_dir: /cip0/software/galaxy/galaxydev/shed_tools
         debug: true
